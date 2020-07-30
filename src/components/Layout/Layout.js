@@ -1,15 +1,14 @@
 import React from 'react';
-import SideDrawer from '../UI/SideDrawer/SideDrawer'
+import classes from './Layout.module.css';
+import Menubar from '../Navigation/Menubar/Menubar'
 
-import Aux from '../../hoc/Aux'
-
-const layout=(props)=>(
-    <Aux>
-        <SideDrawer/>
-        <main>
+const layout = (props) => (
+    <div className={classes.Content}>
+        <Menubar />
+        <main className={classes.Main}>
             {props.children}
         </main>
-    </Aux>
+    </div>
 )
 
 export default layout;

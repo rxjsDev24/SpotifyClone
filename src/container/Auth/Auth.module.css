@@ -1,0 +1,22 @@
+.Auth {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+img {
+    height: 300px;
+    object-fit: contain;
+}
+
+a {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow:  2px 2px 4px #1ed760;
+    color: black;
+    text-decoration: none;
+}
