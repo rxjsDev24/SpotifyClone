@@ -1,0 +1,56 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #282828;
+    bottom: 0;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Center {
+    flex: 0.4;
+    max-width: 300px;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Left {
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 300px;
+    flex: 0.3;
+}
+
+.Right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex: 0.3;
+}
+
+.AlbumLogo {
+    width: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.Green {
+    color: #1db954;
+}
+
+.Icon:hover, .Green:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
+}
+
+ .MuiSlider-root {
+    color: #1db954!important;
+}

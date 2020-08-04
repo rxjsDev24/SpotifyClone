@@ -24,11 +24,28 @@ export const getUser = (token) => {
         })
             .then(response => {
                 dispatch(getUserSuccess(response.data.display_name, response.data.country, response.data.images[0].url));
-                console.log(response.data);
             })
             .catch(err => {
                 dispatch(getUserFail(err))
             })
 
+    }
+}
+
+export const setPlaylist = (playlists) => {
+    return {
+        type: actionTypes.SET_PLAYLIST,
+        playlist: playlists
+    }
+}
+
+export const getUserPlaylists = (token) => {
+    return dispatch => {
+        axios.get('/me/playlists', {
+            headers: { 'Authorization': 'Bearer ' + token }
+        })
+            .then(response => {
+                dispatch(setPlaylist(response.data))
+            })
     }
 }

@@ -1,5 +1,4 @@
 import * as actionTypes from './actionTypes';
-import queryString from 'query-string';
 
 export const logout = () => {
     localStorage.removeItem('token');
@@ -24,12 +23,25 @@ export const checkoutAuthTime = (expirationTime) => {
     }
 }
 
+const getTokenFromResponse = () => {
+    const response = window.location.hash
+        .substring(1)
+        .split("&")
+        .reduce((initial, item) => {
+            var parts = item.split("=");
+            initial[parts[0]] = decodeURIComponent(parts[1]);
+
+            return initial;
+        }, {});
+    return response.access_token;
+};
+
 
 export const storeAccessToken = () => {
     return dispatch => {
-        let parsed = queryString.parse(window.location.search);
-        let accessToken = parsed.access_token;
+        let accessToken = getTokenFromResponse();
 
+        console.log(accessToken)
         if (!accessToken) {
             return;
         }
@@ -38,7 +50,7 @@ export const storeAccessToken = () => {
         localStorage.setItem('token', accessToken);
         localStorage.setItem('expirationDate', date);
         dispatch(authSuccess(accessToken));
-        dispatch(checkoutAuthTime(3600));
+        // dispatch(checkoutAuthTime(3600));
     }
 }
 
@@ -51,7 +63,7 @@ export const checkAuthState = () => {
             const expirationDate = new Date(localStorage.getItem('expirationDate'));
             if (expirationDate > new Date()) {
                 dispatch(authSuccess(token));
-                dispatch(checkoutAuthTime((expirationDate.getTime() - new Date().getTime()) / 1000));
+                // dispatch(checkoutAuthTime((expirationDate.getTime() - new Date().getTime()) / 1000));
             } else {
                 dispatch(logout());
             }

@@ -1,0 +1,23 @@
+.Option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: grey;
+    min-height: 40px;
+    cursor: pointer;
+    transition: 200ms color ease-in;
+}
+
+.Option:hover {
+    color: white;
+}
+
+.Icon {
+    padding: 0 10px;
+}
+
+.Option>p {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+}

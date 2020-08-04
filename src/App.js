@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Layout from './components/Layout/Layout';
+// import Layout from './container/Layout/Layout';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Home from './container/Home/Home'
+// import Home from './container/Home/Home'
 import * as actions from './store/actions/index'
 import { connect } from 'react-redux';
 import Aux from './hoc/Aux'
 import Auth from './container/Auth/Auth';
+import Player from './components/Player/Player';
 
 class App extends Component {
   componentDidMount() {
@@ -28,21 +29,17 @@ class App extends Component {
     )
     if (this.props.isAuthenticated) {
       homePage = (
-        <Aux>
-          <Layout show={this.props.accToken}>
-            <Switch>
-              <Route path="/auth" component={Auth} />
-              <Route path='/' component={Home} />
-            </Switch>
-          </Layout>
-        </Aux>
+        // <Aux>
+        //   <Layout show={this.props.accToken}>
+        //     <Switch>
+        //       <Route path='/' component={Home} />
+        //     </Switch>
+        //   </Layout>
+        // </Aux>
+        <Player />
       )
     }
-    return (
-      <Aux>
-        {homePage}
-      </Aux>
-    );
+    return homePage;
   }
 }
 

@@ -3,3 +3,8 @@ export const AUTH_LOGOUT='AUTH_LOGOUT';
 
 export const GET_USER_SUCCESS = 'GET_USER_SUCCESS';
 export const GET_USER_FAIL = 'GET_USER_FAIL';
+
+export const SET_PLAYLIST='SET_PLAYLIST';
+
+export const SET_TRACKS="SET_TRACKS";
+export const SET_TRACKS_FAIL="SET_TRACKS_FAIL"

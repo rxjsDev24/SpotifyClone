@@ -4,5 +4,9 @@ export {
     logout
 } from './auth'
 export {
-    getUser
+    getUser,
+    getUserPlaylists
 } from './user'
+export {
+    getTracks
+} from './playlist'

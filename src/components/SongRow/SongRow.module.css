@@ -1,0 +1,33 @@
+.Row {
+    margin-left: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    color: white;
+}
+
+.Row:hover {
+    cursor: pointer;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.Info {
+    margin-left: 20px;
+}
+
+.Info>h1 {
+    font-size: 16px;
+}
+
+.Info>p {
+    font-size: 14px;
+    margin-top: 3px;
+    color: gray;
+}
+
+.Album {
+    height: 40px;
+    width: 40px;
+}

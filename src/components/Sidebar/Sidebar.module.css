@@ -1,0 +1,40 @@
+.Sidebar {
+    border: 1px solid black;
+    flex: 0.1;
+    height: 100vh;
+    padding: 0 10px;
+    min-width: 200px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #040404;
+    /* overflow-y: overlay; */
+}
+
+.Logo {
+    height: 70px;
+    padding: 10px;
+    margin: auto;
+}
+
+.Title {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.Sidebar>hr {
+    border: 1px solid #282828;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    overflow-y: overlay;
+    max-height: 60vh;
+}
+
+.Playlist::-webkit-scrollbar {
+    display: none;
+}

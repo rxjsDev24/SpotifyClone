@@ -1,0 +1,36 @@
+.CardContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: cadetblue;
+}
+
+.CardContainer div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 70%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+    height: 100%;
+}
+
+.one {
+    top: -80px;
+    z-index: 10;
+    width: 60%;
+}
+
+.two {
+    top: -40px;
+    z-index: 50;
+    width: 60%;
+}
+
+.three {
+    top: 20px;
+    z-index: 100;
+    width: 60%;
+}
