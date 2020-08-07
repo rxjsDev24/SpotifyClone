@@ -4,17 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import authReducer from './store/reducers/auth';
 import userReducer from './store/reducers/user';
 import playlistReducer from './store/reducers/playlist';
+import homeReducer from './store/reducers/home';
 import { Provider } from 'react-redux';
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
-  playlist: playlistReducer
+  playlist: playlistReducer,
+  home: homeReducer
 })
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;

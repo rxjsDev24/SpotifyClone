@@ -33,6 +33,7 @@ const getTokenFromResponse = () => {
 
             return initial;
         }, {});
+        window.location.hash="";
     return response.access_token;
 };
 
@@ -40,8 +41,6 @@ const getTokenFromResponse = () => {
 export const storeAccessToken = () => {
     return dispatch => {
         let accessToken = getTokenFromResponse();
-
-        console.log(accessToken)
         if (!accessToken) {
             return;
         }

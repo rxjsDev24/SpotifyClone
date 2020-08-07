@@ -11,8 +11,13 @@ import SongRow from '../../components/SongRow/SongRow'
 class Body extends Component {
 
     componentDidMount() {
-        this.props.getUser(this.props.token);
+        if (this.props.token)
+            this.props.getUser(this.props.token);
         this.props.getTracks(this.props.token);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.tracks !== nextProps.tracks
     }
 
     render() {
@@ -26,7 +31,7 @@ class Body extends Component {
             ))
         }
         return (
-            <div className={classes.Body} >
+            <div>
                 <Header user={this.props.user} />
                 <div className={classes.Info}>
                     <img

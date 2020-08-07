@@ -10,3 +10,6 @@ export {
 export {
     getTracks
 } from './playlist'
+export {
+    getData
+} from './home'

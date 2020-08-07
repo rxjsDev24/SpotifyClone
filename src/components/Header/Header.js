@@ -4,7 +4,6 @@ import { Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
 const Header = (props) => {
-    console.log(props.user);
     return (
         <div className={classes.Header}>
             <div className={classes.Left}>
@@ -15,8 +14,8 @@ const Header = (props) => {
                 />
             </div>
             <div className={classes.Right}>
-                <Avatar alt={props.user.name} src={props.user.imageUrl} />
-                <h4>{props.user.name}</h4>
+                <Avatar alt="{props.user.name}" src="" />
+                <h4>Your Name</h4>
             </div>
 
         </div>

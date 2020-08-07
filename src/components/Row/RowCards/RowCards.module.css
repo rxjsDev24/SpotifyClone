@@ -1,0 +1,42 @@
+.CardContainer {
+    grid-column: span(1);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background-color: #282828;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.Body:hover {
+    background-color: rgba(232, 236, 241, 0.3);
+}
+
+.Card {
+    z-index: 30;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.6);
+}
+
+.Info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 60px;
+    margin-right: -20px;
+}
+.Info{
+    font-size: 16px;
+}
+
+.Info>span {
+    font-size: 12px;
+    color: gray;
+}
