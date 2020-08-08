@@ -18,7 +18,6 @@
 }
 
 .Card {
-    z-index: 30;
     width: 100%;
     object-fit: contain;
     box-shadow: 0 4px 60px rgba(0, 0, 0, 0.6);

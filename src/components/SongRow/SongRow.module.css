@@ -10,7 +10,7 @@
 .Row:hover {
     cursor: pointer;
     background-color: black;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .Info {
@@ -21,10 +21,30 @@
     font-size: 16px;
 }
 
-.Info>p {
+.Artist {
+    align-items: center;
+    display: flex;
+}
+
+.Artist>p {
     font-size: 14px;
     margin-top: 3px;
     color: gray;
+}
+
+.Artist>p>span {
+    margin-right: 5px;
+}
+
+.Artist>span {
+    padding: 0 10px;
+}
+
+.Clickable:hover {
+    text-decoration: underline;
+    color: #1DB954;
+    background: black;
+    opacity: 1;
 }
 
 .Album {

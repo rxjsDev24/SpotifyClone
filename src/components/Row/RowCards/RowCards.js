@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './RowCards.module.css'
 const RowCards = (props) => {
     return (
-        <div className={classes.CardContainer}>
+        <div className={classes.CardContainer} onClick={props.clicked}>
             <div className={classes.Body}>
                 <img
                     src={props.url}

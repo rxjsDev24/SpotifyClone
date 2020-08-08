@@ -19,7 +19,9 @@ class App extends Component {
       homePage = (
         <Player>
           <Switch>
-            <Route path="/playlist" component={Body} />
+            <Route path="/album/:id" component={Body}/>
+            <Route path="/artist/:id" component={Body}/>
+            <Route path="/playlist/:id" component={Body}/>
             <Route path="/" component={Home} />
           </Switch>
         </Player>

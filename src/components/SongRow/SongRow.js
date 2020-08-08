@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './SongRow.module.css';
 
-const SongRow = (props) => {
+const Songrow = (props) => {
     return (
         <div className={classes.Row}>
             <img
@@ -10,13 +10,14 @@ const SongRow = (props) => {
                 alt="" />
             <div className={classes.Info}>
                 <h1>{props.track.name}</h1>
-                <p>
-                    {props.track.artists.map((artist) => artist.name).join(", ")} -{" "}
-                    {props.track.album.name}
-                </p>
+                <div className={classes.Artist}>
+                    <p>{props.track.artists.map(artist => <span key={artist.name} className={classes.Clickable}>{artist.name}</span>)}</p>
+                    <span> • </span>
+                    <p className={classes.Clickable}>{props.track.album.name}</p>
+                </div>
             </div>
         </div>
     )
 }
 
-export default SongRow;
+export default Songrow;

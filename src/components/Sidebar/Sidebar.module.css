@@ -10,6 +10,11 @@
     /* overflow-y: overlay; */
 }
 
+.Link {
+    color: unset;
+    text-decoration: none;
+}
+
 .Logo {
     height: 70px;
     padding: 10px;
