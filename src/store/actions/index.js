@@ -8,8 +8,5 @@ export {
     getUserPlaylists
 } from './user'
 export {
-    getTracks
-} from './playlist'
-export {
     getData
 } from './home'

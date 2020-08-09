@@ -4,24 +4,23 @@ import SidebarOptions from './SidebarOptions/SidebarOptions';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import HomeIcon from '@material-ui/icons/Home';
 import SearchIcon from '@material-ui/icons/Search';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/index'
 import { Link } from 'react-router-dom';
 
-const Sidebar = (props) => {
+const Sidebar = React.memo((props) => {
     const state = useSelector(state => state);
     const token = state.auth.token;
-    const playlist = state.user.playlist;
-
     const dispatch = useDispatch();
+    const playlists = state.user.playlist;
 
     useEffect(() => {
         dispatch(actions.getUserPlaylists(token))
     }, [])
 
-    let playlists = null;
-    if (playlist && playlist.items) {
-        playlists = (playlist.items.map(playlist => {
+    let data = null;
+    if (playlists) {
+        data = (playlists.map(playlist => {
             return <SidebarOptions key={playlist.id} title={playlist.name} />
         }))
     }
@@ -40,11 +39,10 @@ const Sidebar = (props) => {
             <strong className={classes.Title}>PLAYLISTS</strong>
             <hr />
             <div className={classes.Playlist}>
-
-                {playlists}
+                {data}
             </div>
         </div>
     )
-}
+})
 
 export default Sidebar;

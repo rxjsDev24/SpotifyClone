@@ -45,7 +45,23 @@ export const getUserPlaylists = (token) => {
             headers: { 'Authorization': 'Bearer ' + token }
         })
             .then(response => {
-                dispatch(setPlaylist(response.data))
+                const playlists = [];
+                response.data.items.map(item => {
+                    return playlists.push({
+                        id: item.id,
+                        images: item.images,
+                        name: item.name,
+                        type: item.type,
+                        uri: item.uri,
+                        href: item.href,
+                        description: item.description
+                    })
+                })
+                console.log(playlists);
+                dispatch(setPlaylist(playlists))
+            })
+            .catch(err => {
+                console.log(err);
             })
     }
 }

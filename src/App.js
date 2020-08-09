@@ -11,7 +11,9 @@ class App extends Component {
   componentDidMount() {
     this.props.isAuth();
   }
+
   render() {
+    // console.log("check app render");
     let homePage = (
       <Auth />
     )
@@ -19,9 +21,9 @@ class App extends Component {
       homePage = (
         <Player>
           <Switch>
-            <Route path="/album/:id" component={Body}/>
-            <Route path="/artist/:id" component={Body}/>
-            <Route path="/playlist/:id" component={Body}/>
+            <Route path="/album/:id" component={Body} />
+            <Route path="/artist/:id" component={Body} />
+            <Route path="/playlist/:id" component={Body} />
             <Route path="/" component={Home} />
           </Switch>
         </Player>

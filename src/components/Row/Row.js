@@ -14,6 +14,16 @@ const Row = (props) => {
                 name: item.name,
                 type: item.type
             }
+        }   
+        if (item.type === 'album') {
+            data = {
+                id: item.id,
+                href: item.href,
+                artists: item.artists,
+                images: item.images,
+                name: item.name,
+                type: item.type
+            }
         }
         return <RowCards
             clicked={() => props.clicked(data)}

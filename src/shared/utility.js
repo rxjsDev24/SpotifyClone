@@ -16,7 +16,7 @@ export const getRandom = (array) => {
     let arr = [];
     let index = Math.floor(Math.random() * array.length);
     arr.push(array[index]);
-    while (arr.length !== 3) {
+    while (arr.length !== 4) {
         index = Math.floor(Math.random() * array.length);
         if (arr.includes(array[index])) {
             continue;

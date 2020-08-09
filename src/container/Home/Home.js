@@ -21,12 +21,12 @@ class Home extends Component {
         this.props.history.replace(`/playlist/${data.id}`, data)
     }
 
-    albumToggleHandler = () => {
-
+    albumToggleHandler = (data) => {
+        this.props.history.replace(`/album/${data.id}`, data)
     }
 
     render() {
-        let categories = getRandom([...genres]).slice(0, 3);
+        let categories = getRandom([...genres]);
         let data = this.props.releases && this.props.featured ?
             <Aux>
                 <Row data={this.props.releases} name="New Releases" clicked={this.albumToggleHandler} />
@@ -35,7 +35,7 @@ class Home extends Component {
                     categories.map(category => {
                         return this.props[category] ?
                             < Row key={category} data={this.props[category]} name={category} clicked={this.playlistToggleHandler} />
-                            : null
+                            : null;
                     })
                 }
             </Aux>
@@ -46,7 +46,7 @@ class Home extends Component {
                 <Header />
                 {data}
             </div>
-        )
+        );
     }
 }
 

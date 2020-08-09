@@ -8,14 +8,12 @@ import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import authReducer from './store/reducers/auth';
 import userReducer from './store/reducers/user';
-import playlistReducer from './store/reducers/playlist';
 import homeReducer from './store/reducers/home';
 import { Provider } from 'react-redux';
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
-  playlist: playlistReducer,
   home: homeReducer
 })
 
